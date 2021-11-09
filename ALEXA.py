@@ -3,14 +3,9 @@ import speech_recognition as sr
 import datetime
 import webbrowser
 import os
-import smtplib
-import matplotlib.pyplot as plt
-import cv2
-import easyocr
 import shutil
 import os 
-from pylab import rcParams
-from IPython.display import Image
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -21,16 +16,6 @@ engine.setProperty('voice', voices[0].id)
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
-
-
-def photoextration():
-    rcParams['figure.figsize'] = 8, 16
-    file = input("Write the path make sure you write it with \\")
-    reader = easyocr.Reader(['en'])
-    Image(file)
-    output = reader.readtext(file)
-    for i in output:
-        print(i[-2])
 
 def removeextention(filename0):
     filename1=""
