@@ -93,9 +93,6 @@ if __name__ == "__main__":
             print(songs)    
             os.startfile(os.path.join(music_dir, songs[0]))
 
-        elif 'image to text' in query:
-            photoextration()
-
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
             speak(f"Sir, the time is {strTime}")
